@@ -1,22 +1,18 @@
 
 import React from 'react';
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import "./App.css";
 import Layout from "./Component/Layout/Layout";
 import Home from "./Component/Home/Home";
 import About from "./Component/About/About";
 import Portfolio from "./Component/Portfolio/Portfolio";
 import Contact from "./Component/Contact/Contact";
-import NotFound from "./Component/NotFound/NotFound";
-
 
 function App() {
-  // تعريف المسارات
+  // تعريف المسارات مع basename
   let router = createBrowserRouter([
     {
-      path: "/", // المسار الجذر
+      path: "/",
       element: <Layout />,
       children: [
         { path: "/", element: <Home /> },
@@ -24,10 +20,12 @@ function App() {
         { path: "about", element: <About /> },
         { path: "portfolio", element: <Portfolio /> },
         { path: "contact", element: <Contact /> },
-        { path: "*", element: <NotFound /> }, // مسار للأخطاء
+        
       ],
     },
-  ]);
+  ], {
+    basename: "/Protofialll" // مسار الأساس
+  });
 
   return (
     <>
