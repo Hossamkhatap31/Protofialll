@@ -1,0 +1,12 @@
+@media screen and (max-width:768px) {
+    .contactForm{
+        width: 90%;
+    }
+    
+}
+@media screen and (min-width:769px) {
+    .contactForm{
+        width: 50%;
+    }
+    
+}
